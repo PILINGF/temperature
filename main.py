@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 
 TRAIN_SIZE = 7
 ACTUAL_SIZE = 3
-MAX_STEP = 30000
+MAX_STEP = 3000
 
 
 def train(loss):
@@ -56,7 +56,7 @@ def generate_graph(actual, predict, name):
 def main():
   data = input_data.InputData()
 
-  x = tf.placeholder(tf.float32, shape=[None, 3, 9])
+  x = tf.placeholder(tf.float32, shape=[None, 4, 9])
   y = tf.placeholder(tf.float32, shape=[None, 3])
   rate = tf.placeholder(tf.float32, shape=[])
   predict_op = predicrt(x, rate)
