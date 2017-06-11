@@ -22,14 +22,14 @@ class InputData(object):
     self.idx += self.batch_size
     return trains, actuals
   
-  
+
   def __create_batchs(self, data_dir, test=False):
     if not test:
-      osaka_avgs, osaka_maxs, osaka_mins = self.__read_data(data_dir + 'osaka.csv')
-      tokyo_avgs, tokyo_maxs, tokyo_mins = self.__read_data(data_dir + 'tokyo.csv')
+      osaka_avgs, osaka_maxs, osaka_mins = self.__read_data(data_dir + '_osaka.csv')
+      tokyo_avgs, tokyo_maxs, tokyo_mins = self.__read_data(data_dir + '_tokyo.csv')
     else:
-      osaka_avgs, osaka_maxs, osaka_mins = self.__read_data(data_dir + 'test_osaka.csv')
-      tokyo_avgs, tokyo_maxs, tokyo_mins = self.__read_data(data_dir + 'test_tokyo.csv')
+      osaka_avgs, osaka_maxs, osaka_mins = self.__read_data(data_dir + '_test_osaka.csv')
+      tokyo_avgs, tokyo_maxs, tokyo_mins = self.__read_data(data_dir + '_test_tokyo.csv')
     data = []
     for i in range(len(osaka_avgs) - 8):
       data.append(([osaka_avgs[i:i+7] + tokyo_avgs[i+6:i+8], osaka_maxs[i:i+7] + tokyo_maxs[i+6:i+8], osaka_mins[i:i+7] + tokyo_mins[i+6:i+8]]
